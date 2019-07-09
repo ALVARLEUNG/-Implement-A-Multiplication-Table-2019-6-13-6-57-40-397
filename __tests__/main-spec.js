@@ -27,8 +27,8 @@ it ('should return null when the start and the end out of the range given 0, 100
     expect(createMultiplicationTable(0, 1001)).toBe(null);
 });
 
-it ('should return null when start smaller than the end given 2, 4', () => {
-    expect(createMultiplicationTable(2, 4)).toBe(null);
+it ('should return null when end smaller than the end given 4, 2', () => {
+    expect(createMultiplicationTable(4, 2)).toBe(null);
 });
 
 it ('should return null when the end out of range given 1, 1001', () => {
@@ -36,5 +36,9 @@ it ('should return null when the end out of range given 1, 1001', () => {
 });
 
 it ('should return result string when start smaller is equal the end given 2, 2', () => {
-    expect(createMultiplicationTable(2, 2)).toBe("2*2=4 /n");
+    expect(createMultiplicationTable(2, 2)).toBe("2*2=4"+" "+"\n");
+});
+
+it ('should return result string when the start smaller than the end given 2 and 4', () => {
+    expect(createMultiplicationTable(2, 4)).toBe("2*2=4"+" "+"\n" + "2*3=6 3*3=9"+" "+"\n" + "2*4=8 3*4=12 4*4=16"+" "+"\n");
 });

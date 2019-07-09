@@ -11,18 +11,16 @@ function isOutOfRange (start, end) {
 
 function createMultiplicationTable (start, end) {
     var multiplicationTabl = '';
-    if (!isOutOfRange && isStartSmaller) {
+    if (!isOutOfRange(start, end) && isStartSmaller(start, end)) {
         for (var n=start;n<=end;n++) {
-
             for (var m=start;m<n+1;m++) {
             var b=m*n;
             
-            multiplicationTabl += m+"×"+n+"="+b+" "+" ";
-            
+            multiplicationTabl+= m+"*"+n+"="+b+" ";
             }
-            multiplicationTabl += "\n" ;
+            multiplicationTabl += '\n' ;
             }
-            return multiplicationTabl
+            return multiplicationTabl;
     }else {
         return null
     }
